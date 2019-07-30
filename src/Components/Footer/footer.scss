@@ -1,0 +1,148 @@
+.footer_area {
+  position: relative;
+  border-top: 1px solid #dee1eb;
+  background-color: #fff;
+  text-align: left;
+  color: #666;
+  font-size: 14px;
+  line-height: 20px;
+  min-height: 216px;
+  padding: 24px 0px 80px;
+  letter-spacing: -0.5px;
+}
+
+.foot_nav {
+  border-bottom: 1px solid #f3f2f9;
+
+  b {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .inner_foot {
+    width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 25px;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    .link_mail {
+      margin-left: 19px;
+      color: #666;
+    }
+  }
+
+  .info_policy {
+    overflow: hidden;
+    margin: 0 auto;
+    font-size: 1px;
+
+    display: block;
+    width: auto;
+    margin-top: 4px;
+    // vertical-align: top;
+
+    li {
+      position: relative;
+      display: inline-block;
+      margin-top: 0;
+      padding: 0 7px 0 8px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 1px;
+        height: 10px;
+        background-color: #d8d8d8;
+      }
+
+      &:first-child {
+        display: inline-block;
+        margin-top: 0;
+        padding: 0 7px 0 0;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      a {
+        font-size: 14px;
+        line-height: 20px;
+        display: inline-block;
+        color: #666;
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+.foot_info {
+  width: 1100px;
+  margin: 0 auto;
+  padding-top: 24px;
+
+  font-size: 22px;
+  line-height: 1;
+
+  .info_company li {
+    display: inline-block;
+    position: relative;
+    margin-left: 12px;
+    color: #333;
+    vertical-align: top;
+
+    margin: 0;
+    padding: 0 7px 0 8px;
+  }
+}
+
+.foot_sns {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  margin-left: 392px;
+  padding-top: 0;
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    margin: 0 5px;
+    font-size: 22px;
+  }
+
+  .ico_g_main {
+    background-image: url("//cdn.tutoring.co.kr/uploads/home/img/main/version3/ico_home_3_190402.png");
+    -webkit-background-size: 420px 400px;
+    background-size: 420px 400px;
+
+    display: inline-block;
+    overflow: hidden;
+    font-size: 1px;
+    line-height: 1px;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    color: transparent;
+
+    width: 42px;
+    height: 42px;
+  }
+
+  .ico_facebook {
+    background-position: -270px 0;
+  }
+
+  .ico_naver {
+    background-position: -316px 0;
+  }
+
+  .ico_brunch {
+    background-position: -362px 0;
+  }
+}
