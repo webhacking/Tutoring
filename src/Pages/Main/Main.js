@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./main.scss";
+import Footer from "Components/Footer";
 import ExpBtn from "Components/Button/ExperienceButton";
 import UnderbarItem from "Pages/Main/UnderbarItem";
 import AboutWhy from "Pages/Main/AboutItem/About_why";
@@ -45,6 +46,7 @@ class Main extends Component {
             </div>
           </article>
         </section>
+        <Footer />
       </>
     );
   }
