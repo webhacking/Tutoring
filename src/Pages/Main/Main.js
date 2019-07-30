@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./main.scss";
 import ExpBtn from "Components/Button/ExperienceButton";
+import UnderbarItem from "Pages/Main/UnderbarItem";
+import About_why from "Pages/Main/AboutItem/About_why";
+import About_tuto from "Pages/Main/AboutItem/About_tuto";
 
 class Main extends Component {
   handleExperience = () => {
@@ -28,34 +31,15 @@ class Main extends Component {
                 onClick={this.handleExperience}
               />
               <div className="main_underbar_wrap">
-                <ul className="main_underbar_item">
-                  <li>
-                    <span className="underbar_icon_down icon" />
-                    누적다운로드
-                    <em>200만</em>
-                  </li>
-                  <li>
-                    <span className="underbar_icon_star icon" />
-                    수강생추천율
-                    <em>96%</em>
-                  </li>
-                  <li>
-                    <span className="underbar_icon_chart icon" />
-                    연평균회원증가율
-                    <em>800%</em>
-                  </li>
-                  <li>
-                    <span className="underbar_icon_mark icon" />
-                    영어회화만족도
-                    <em>1위</em>
-                  </li>
-                </ul>
-                <p>2019년1월기준</p>
+                <UnderbarItem />
               </div>
             </div>
 
-            {/* image 밑 간략한 About div */}
-            <div className="main_about" />
+            {/* No / Yes 나오는 Div */}
+            <About_why />
+
+            {/* Tutoring 소개하는 Div */}
+            <About_tuto />
           </article>
         </section>
       </>
