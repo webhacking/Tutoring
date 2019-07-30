@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./main.scss";
 import ExpBtn from "Components/Button/ExperienceButton";
 import UnderbarItem from "Pages/Main/UnderbarItem";
-import About_why from "Pages/Main/AboutItem/About_why";
-import About_tuto from "Pages/Main/AboutItem/About_tuto";
+import AboutWhy from "Pages/Main/AboutItem/About_why";
+import AboutTuto from "Pages/Main/AboutItem/About_tuto";
 
 class Main extends Component {
   handleExperience = () => {
@@ -34,12 +34,13 @@ class Main extends Component {
                 <UnderbarItem />
               </div>
             </div>
+            <div className="main_about">
+              {/* No / Yes 나오는 Div */}
+              <AboutWhy />
 
-            {/* No / Yes 나오는 Div */}
-            <About_why />
-
-            {/* Tutoring 소개하는 Div */}
-            <About_tuto />
+              {/* Tutoring 소개하는 Div */}
+              <AboutTuto />
+            </div>
           </article>
         </section>
       </>

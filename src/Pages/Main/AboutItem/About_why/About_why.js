@@ -1,7 +1,7 @@
 import React from "react";
 
-const About_why = () => (
-  <div className="main_about">
+const AboutWhy = () => (
+  <div className="main_about_why">
     <div className="about_left">
       <div className="left_innerbox">
         <em class="emph_sub">내가 맞추는 영어공부</em>
@@ -79,4 +79,4 @@ const About_why = () => (
   </div>
 );
 
-export default About_why;
+export default AboutWhy;
