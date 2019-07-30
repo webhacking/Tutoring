@@ -40,6 +40,8 @@ class Main extends Component {
 
               {/* Tutoring 소개하는 Div */}
               <AboutTuto />
+
+              {/* 피라미드 Div */}
             </div>
           </article>
         </section>

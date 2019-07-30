@@ -17,3 +17,41 @@
 .txt_b_p {
   display: block;
 }
+
+.bg_slice {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+
+  height: 100px;
+  z-index: 1;
+}
+
+.bg_slice_m {
+  display: none;
+}
+
+.bg_no {
+  right: 150px;
+  width: 550px;
+  background-image: url("http://cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_about_no_pc.png");
+}
+
+.emph_sub {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.tit_about {
+  margin-bottom: 42px;
+  font-size: 48px;
+  line-height: 64px;
+  display: block;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: -2px;
+}
