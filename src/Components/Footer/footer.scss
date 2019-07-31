@@ -9,6 +9,13 @@
   min-height: 216px;
   padding: 24px 0px 80px;
   letter-spacing: -0.5px;
+
+  .txt_copyright {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 .foot_nav {
@@ -88,6 +95,14 @@
   font-size: 22px;
   line-height: 1;
 
+  .info_company span {
+    display: inline-block;
+    color: #333;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
   .info_company li {
     display: inline-block;
     position: relative;
@@ -97,9 +112,46 @@
 
     margin: 0;
     padding: 0 7px 0 8px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    a {
+      display: inline-block;
+      color: #333;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .link_offer {
+    font-weight: bold;
+    margin-left: 4px;
+    text-decoration: underline !important;
+  }
+
+  address {
+    display: block;
+    height: 20px;
+
+    span {
+      display: inline-block;
+      position: relative;
+      padding: 0 7px 0 8px;
+      font-size: 14px;
+      line-height: 20px;
+      vertical-align: top;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
   }
 }
 
+// SNS CSS
 .foot_sns {
   position: absolute;
   top: 24px;
@@ -116,6 +168,7 @@
     font-size: 22px;
   }
 
+  // Icon css
   .ico_g_main {
     background-image: url("//cdn.tutoring.co.kr/uploads/home/img/main/version3/ico_home_3_190402.png");
     -webkit-background-size: 420px 400px;
