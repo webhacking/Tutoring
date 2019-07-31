@@ -1,4 +1,5 @@
 import React from "react";
+import "./tuto.scss";
 
 const AboutTuto = () => (
   <div className="main_about_tuto">
