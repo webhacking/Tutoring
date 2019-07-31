@@ -22,8 +22,7 @@ class AboutYoutube extends React.Component {
       src: "https://img.youtube.com/vi/h3gl3MkEOdY/mqdefault.jpg"
     },
     {
-      title:
-        "튜터링 : 1:1 원어민 영어수다! 학원 갈시간 없는 직장인들에게 강추!!",
+      title: "튜터링 : 1:1 원어민 영어수다! 학원 갈시간 없는 직장인들에게 강추!!",
       src: "https://img.youtube.com/vi/r8pQCBDgq9A/mqdefault.jpg"
     },
     {

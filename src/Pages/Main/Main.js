@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import "./main.scss";
 import Footer from "Components/Footer";
-
 import Title from "Pages/Main/MainTitle";
-import AboutWhy from "Pages/Main/AboutItem/About_why";
-import AboutTuto from "Pages/Main/AboutItem/About_tuto";
-import AboutMatch from "Pages/Main/AboutItem/About_match";
-import AboutPrice from "Pages/Main/AboutItem/About_price";
-import AboutYoutube from "Pages/Main/AboutItem/About_youtube";
+import About from "Pages/Main/AboutItem";
 
 class Main extends Component {
   handleExperience = () => {
@@ -25,21 +20,9 @@ class Main extends Component {
             {/* 메인 image div */}
             <Title onClick={this.handleExperience} />
 
+            {/* 한혜진 사진 밑 박스 */}
             <div className="main_about">
-              {/* No / Yes 나오는 Div */}
-              <AboutWhy />
-
-              {/* Tutoring 소개하는 Div */}
-              <AboutTuto />
-
-              {/* 피라미드 Div */}
-              <AboutMatch />
-
-              {/* Price Div */}
-              <AboutPrice />
-
-              {/* Vod가 있는 div */}
-              <AboutYoutube />
+              <About />
             </div>
           </article>
         </section>
