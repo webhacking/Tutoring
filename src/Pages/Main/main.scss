@@ -5,3 +5,72 @@
   overflow: hidden;
   letter-spacing: -1px;
 }
+
+.main_common {
+  position: relative;
+  padding: 80px 0 73px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+}
+
+// Component 안에 em태그와 h3 태그 스타일 통일
+.tit_sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+
+  margin-bottom: 15px;
+
+  color: $titleSubColor;
+}
+
+.tit_item {
+  display: block;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+
+  margin-bottom: 50px;
+
+  text-indent: -2px;
+}
+
+.txt_g {
+  width: 500px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+
+  margin-top: 30px;
+
+  .txt_b_m {
+    display: inline-block;
+  }
+}
+
+.thumb_item {
+  width: 515px;
+
+  position: absolute;
+  top: 65px;
+  left: 50%;
+
+  .img_g {
+    width: 100%;
+  }
+
+  span {
+    display: block;
+    font-size: 15px;
+    text-align: center;
+    text-indent: -173px;
+
+    color: #919191;
+  }
+
+  .txt_info {
+    font-size: 12px;
+  }
+}

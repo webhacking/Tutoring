@@ -6,6 +6,7 @@ import Title from "Pages/Main/MainTitle";
 import AboutWhy from "Pages/Main/AboutItem/About_why";
 import AboutTuto from "Pages/Main/AboutItem/About_tuto";
 import AboutMatch from "Pages/Main/AboutItem/About_match";
+import AboutPrice from "Pages/Main/AboutItem/About_price";
 
 class Main extends Component {
   handleExperience = () => {
@@ -32,6 +33,9 @@ class Main extends Component {
 
               {/* 피라미드 Div */}
               <AboutMatch />
+
+              {/* Price Div */}
+              <AboutPrice />
             </div>
           </article>
         </section>
