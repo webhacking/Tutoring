@@ -5,12 +5,12 @@ const AboutWhy = () => (
   <div className="main_about_why">
     <div className="about_left">
       <div className="left_innerbox">
-        <em class="emph_sub">내가 맞추는 영어공부</em>
-        <h3 class="tit_about">
+        <em className="emph_sub">내가 맞추는 영어공부</em>
+        <h3 className="tit_about">
           실패한 영어공부, <br />
           당신 탓이 아닙니다
         </h3>
-        <ul class="list_about">
+        <ul className="list_about">
           <li>
             <strong>너무 바쁜 일정</strong>
             야근, 약속, 알바에 회식까지 <br />
@@ -27,27 +27,27 @@ const AboutWhy = () => (
             1시간에 3번 말하면 다행인 단체 수업
           </li>
         </ul>
-        <span class="bg_txt bg_no">No</span>
+        <span className="bg_txt bg_no">No</span>
       </div>
       <img
         src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_slice_01.png"
-        class="bg_slice bg_slice_m"
+        className="bg_slice bg_slice_m"
         alt=""
       />
       <img
         src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_slice_02.png"
-        class="bg_slice bg_slice_pc"
+        className="bg_slice bg_slice_pc"
         alt=""
       />
     </div>
     <div className="about_right">
       <div className="right_innerbox">
-        <em class="emph_sub">이제는 내게 맞추는 영어공부</em>
-        <h3 class="tit_about">
+        <em className="emph_sub">이제는 내게 맞추는 영어공부</em>
+        <h3 className="tit_about">
           성공한 영어공부, <br />
           200만명의 선택 튜터링
         </h3>
-        <ul class="list_about">
+        <ul className="list_about">
           <li>
             <strong>바빠도 OK! 아무때나 수업 가능</strong>
             수업시작 버튼만 누르면 24시간 즉시 <br />
@@ -64,15 +64,15 @@ const AboutWhy = () => (
             직접 선택하니 내게 꼭 맞는 수업
           </li>
         </ul>
-        <span class="bg_txt bg_yes">No</span>
+        <span className="bg_txt bg_yes">No</span>
         <img
           src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_slice_02.png"
-          class="bg_slice bg_slice_m"
+          className="bg_slice bg_slice_m"
           alt=""
         />
         <img
           src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_slice_after.png"
-          class="bg_slice bg_slice_pc"
+          className="bg_slice bg_slice_pc"
           alt=""
         />
       </div>

@@ -7,6 +7,7 @@ import AboutWhy from "Pages/Main/AboutItem/About_why";
 import AboutTuto from "Pages/Main/AboutItem/About_tuto";
 import AboutMatch from "Pages/Main/AboutItem/About_match";
 import AboutPrice from "Pages/Main/AboutItem/About_price";
+import AboutYoutube from "Pages/Main/AboutItem/About_youtube";
 
 class Main extends Component {
   handleExperience = () => {
@@ -36,6 +37,9 @@ class Main extends Component {
 
               {/* Price Div */}
               <AboutPrice />
+
+              {/* Vod가 있는 div */}
+              <AboutYoutube />
             </div>
           </article>
         </section>
