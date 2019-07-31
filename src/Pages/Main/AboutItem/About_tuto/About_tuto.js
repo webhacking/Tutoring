@@ -2,7 +2,7 @@ import React from "react";
 import "./tuto.scss";
 
 const AboutTuto = () => (
-  <div className="main_about_tuto">
+  <div className="main_common main_about_tuto">
     <div className="about_tuto_title">
       <div class="inner_item">
         <em class="tit_sub">원하는 시간, 원하는 튜터와 원하는 주제로</em>

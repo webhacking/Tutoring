@@ -1,5 +1,3 @@
-@import "Style/color.scss";
-
 .main_about_match {
   height: 552px;
 
@@ -13,30 +11,9 @@
 
   .match_wrap {
     width: 960px;
+    text-align: initial;
 
     margin: 0 auto;
-
-    .tit_sub {
-      display: block;
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 1;
-
-      margin-bottom: 15px;
-
-      color: $titleSubColor;
-    }
-
-    .tit_item {
-      display: block;
-      font-size: 48px;
-      font-weight: 600;
-      line-height: 1;
-
-      margin-bottom: 50px;
-
-      text-indent: -2px;
-    }
 
     .tit_g {
       display: block;
@@ -45,44 +22,6 @@
       line-height: 34px;
 
       margin-bottom: 21px;
-    }
-
-    .txt_g {
-      width: 500px;
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 30px;
-
-      margin-top: 30px;
-
-      .txt_b_m {
-        display: inline-block;
-      }
-    }
-  }
-
-  .thumb_item {
-    width: 515px;
-
-    position: absolute;
-    top: 65px;
-    left: 50%;
-
-    .img_g {
-      width: 100%;
-    }
-
-    span {
-      display: block;
-      font-size: 15px;
-      text-align: center;
-      text-indent: -173px;
-
-      color: #919191;
-    }
-
-    .txt_info {
-      font-size: 12px;
     }
   }
 }

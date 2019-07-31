@@ -2,7 +2,7 @@ import React from "react";
 import "./match.scss";
 
 const AboutMatch = () => (
-  <div className="main_about_match">
+  <div className="main_common main_about_match">
     <div className="match_wrap">
       <em class="tit_sub">내 수준과 학습 목표에 집중한</em>
       <h3 class="tit_item">일대일 영어공부</h3>
