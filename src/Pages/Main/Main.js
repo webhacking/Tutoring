@@ -5,6 +5,7 @@ import Footer from "Components/Footer";
 import Title from "Pages/Main/MainTitle";
 import AboutWhy from "Pages/Main/AboutItem/About_why";
 import AboutTuto from "Pages/Main/AboutItem/About_tuto";
+import AboutMatch from "Pages/Main/AboutItem/About_match";
 
 class Main extends Component {
   handleExperience = () => {
@@ -30,6 +31,7 @@ class Main extends Component {
               <AboutTuto />
 
               {/* 피라미드 Div */}
+              <AboutMatch />
             </div>
           </article>
         </section>
