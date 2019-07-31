@@ -51,9 +51,9 @@ class AboutYoutube extends React.Component {
 
     return (
       <div className="main_common main_about_youtube">
-        <em class="tit_sub">누구나 영어로 말할 수 있도록</em>
-        <h3 class="tit_item">
-          60만명 영어인생을 <span class="txt_b_m">바꾼 튜터링</span>
+        <em className="tit_sub">누구나 영어로 말할 수 있도록</em>
+        <h3 className="tit_item">
+          60만명 영어인생을 <span className="txt_b_m">바꾼 튜터링</span>
         </h3>
         <div className="youtube_wrap">
           <div className="now_playing">
@@ -83,8 +83,8 @@ class AboutYoutube extends React.Component {
                 );
               })}
             </ul>
-            <span class="area_arr">
-              <span class="ico_g_main" />
+            <span className="area_arr">
+              <span className="ico_g_main" />
             </span>
           </div>
         </div>
