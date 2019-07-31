@@ -1,0 +1,151 @@
+// About_why Component의 공통 클래스
+
+.bg_txt {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 301px;
+  font-size: 1px;
+  background-repeat: no-repeat;
+  color: transparent;
+}
+
+// Div 의 왼쪽 CSS
+.about_left {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 850px;
+  background-color: #f5f5fa;
+  z-index: -1;
+
+  .left_innerbox {
+    float: right;
+    padding-left: 290px;
+    padding: 80px 0 120px;
+    color: #666;
+
+    .list_about {
+      width: 480px;
+
+      li {
+        padding: 24px 0 30px;
+        font-size: 18px;
+        line-height: 30px;
+        border-top: 1px solid #dee1eb;
+        border-width: 2px;
+
+        &:first-child {
+          border-top: 0 none;
+        }
+      }
+
+      strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 20px;
+        line-height: 29px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .bg_slice {
+    margin-left: -55px;
+  }
+
+  .bg_slice_pc {
+    display: block;
+  }
+}
+
+// Div 의 오른쪽 CSS
+.about_right {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 850px;
+
+  background-color: #6759ef;
+  color: #fff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -55px;
+    width: 55px;
+    height: 850px;
+    background: url(//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_length02.png)
+      0 0 no-repeat;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+  }
+
+  .right_innerbox {
+    height: 850px;
+    padding: 80px 0 0;
+    background: none;
+
+    .emph_sub {
+      padding-left: 78px;
+    }
+
+    .tit_about {
+      padding-left: 78px;
+      color: #fff;
+    }
+
+    .list_about {
+      width: 512px;
+      margin-left: -52px;
+
+      li {
+        padding: 24px 0 30px;
+        font-size: 18px;
+        line-height: 30px;
+        border-top: 1px solid #dee1eb;
+        border-width: 2px;
+        padding-left: 132px;
+        border-color: rgba(255, 255, 255, 0.3);
+
+        &:first-child {
+          border-top: 0 none;
+        }
+      }
+
+      strong {
+        color: #ffe812;
+        display: block;
+        margin-bottom: 6px;
+        font-size: 20px;
+        line-height: 29px;
+        font-weight: 600;
+      }
+    }
+
+    .bg_yes {
+      left: 105px;
+      width: 705px;
+      background-image: url("http://cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_about_yes_pc.png");
+    }
+
+    .bg_slice {
+      left: -55px;
+      width: 108%;
+    }
+
+    .bg_slice_pc {
+      display: block;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./why.scss";
 
 const AboutWhy = () => (
   <div className="main_about_why">

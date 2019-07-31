@@ -1,0 +1,77 @@
+@import "Style/color.scss";
+
+.main_underbar_wrap {
+  width: 100%;
+  height: 118px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: $mainUnderbarBgc;
+
+  .main_underbar_item {
+    text-align: center;
+
+    li {
+      position: relative;
+      display: inline-block;
+      height: 60px;
+      padding: 30px 33px 0 106px;
+      text-align: left;
+      margin-top: 29px;
+      color: white;
+      font-size: 18px;
+
+      em {
+        font-size: 30px;
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        color: #ffe812;
+        position: absolute;
+        top: -6px;
+        left: 0;
+        height: 60px;
+        padding-left: 106px;
+      }
+
+      span {
+        position: absolute;
+        left: 30px;
+        top: 0;
+
+        display: block;
+        width: 60px;
+        height: 60px;
+
+        background-size: 420px 400px;
+      }
+
+      .underbar_icon_down {
+        background-position: 0 -330px;
+      }
+
+      .underbar_icon_star {
+        background-position: -60px -330px;
+      }
+
+      .underbar_icon_chart {
+        background-position: -120px -330px;
+      }
+
+      .underbar_icon_mark {
+        background-position: -180px -330px;
+      }
+    }
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+  }
+}
