@@ -1,5 +1,13 @@
 // About_why Component의 공통 클래스
 
+.main_about_why {
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
 .bg_txt {
   display: block;
   position: absolute;
