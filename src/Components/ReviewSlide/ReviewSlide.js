@@ -27,11 +27,21 @@ class ReviewSlide extends React.Component {
 
     if (oper === "+") {
       curr_idx++;
+
+      if (curr_idx >= slideList.length - 1) {
+        curr_idx = slideList.length - 1;
+      }
+
       this.setState({
         show_idx: curr_idx
       });
     } else {
       curr_idx--;
+
+      if (curr_idx < 0) {
+        curr_idx = 0;
+      }
+
       this.setState({
         show_idx: curr_idx
       });

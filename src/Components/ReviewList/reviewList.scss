@@ -32,6 +32,32 @@
 
     background-color: #fff;
 
+    .txt_info {
+      position: absolute;
+      bottom: 30px;
+      left: 24px;
+      margin-top: 0;
+
+      span {
+        display: inline-block;
+        position: relative;
+        color: #666;
+        vertical-align: top;
+
+        &:last-child {
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 15px;
+            margin: 10px 6px 0;
+            background-color: #dee1eb;
+            vertical-align: top;
+          }
+        }
+      }
+    }
+
     &:first-child {
       margin-left: 0;
     }
