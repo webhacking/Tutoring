@@ -5,6 +5,7 @@ import AboutMatch from "Pages/Main/AboutItem/About_match";
 import AboutPrice from "Pages/Main/AboutItem/About_price";
 import AboutYoutube from "Pages/Main/AboutItem/About_youtube";
 import AboutReview from "Pages/Main/AboutItem/About_review";
+import AboutLab from "Pages/Main/AboutItem/About_lab";
 
 const About = () => (
   <>
@@ -25,6 +26,9 @@ const About = () => (
 
     {/* image slice하는 review div */}
     <AboutReview />
+
+    {/* 학습연구소 DIv */}
+    <AboutLab />
   </>
 );
 

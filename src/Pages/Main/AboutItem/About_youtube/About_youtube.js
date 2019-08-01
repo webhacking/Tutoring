@@ -40,8 +40,7 @@ class AboutYoutube extends React.Component {
   ];
 
   videoChangeHandler = e => {
-    console.log(e.target.dataset.videoSrc);
-    const video_id = e.target.style.backgroundImage.slice(32, 43);
+    const video_id = e.target.dataset.videoSrc.slice(27, 38);
 
     this.setState({
       video_id
@@ -75,15 +74,12 @@ class AboutYoutube extends React.Component {
                   <li
                     key={idx}
                     className={`thumb_${idx}`}
+                    style={{
+                      backgroundImage: `url(${item.src})`
+                    }}
                     onClick={e => this.videoChangeHandler(e)}
                   >
-                    <div
-                      className="thumb_overlay"
-                      data-video-src={item.src}
-                      style={{
-                        backgroundImage: `url(${item.src})`
-                      }}
-                    >
+                    <div className="thumb_overlay" data-video-src={item.src}>
                       <p className="thumb_title">{item.title}</p>
                     </div>
                   </li>
