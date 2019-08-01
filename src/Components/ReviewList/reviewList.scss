@@ -1,0 +1,39 @@
+@import "Style/color.scss";
+
+.emph_g {
+  display: block;
+
+  padding-bottom: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: left;
+
+  color: $titleSubColor;
+}
+
+.list_review {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  li {
+    width: 247px;
+    height: 472px;
+
+    position: relative;
+    float: left;
+
+    margin-left: 19px;
+    margin-top: 0;
+    padding: 30px 24px;
+
+    background-color: #fff;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
