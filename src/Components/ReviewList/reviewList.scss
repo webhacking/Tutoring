@@ -1,0 +1,65 @@
+@import "Style/color.scss";
+
+.emph_g {
+  display: block;
+
+  padding-bottom: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: left;
+
+  color: $titleSubColor;
+}
+
+.list_review {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  li {
+    width: 247px;
+    height: 472px;
+
+    position: relative;
+    float: left;
+
+    margin-left: 19px;
+    margin-top: 0;
+    padding: 30px 24px;
+
+    background-color: #fff;
+
+    .txt_info {
+      position: absolute;
+      bottom: 30px;
+      left: 24px;
+      margin-top: 0;
+
+      span {
+        display: inline-block;
+        position: relative;
+        color: #666;
+        vertical-align: top;
+
+        &:last-child {
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 15px;
+            margin: 10px 6px 0;
+            background-color: #dee1eb;
+            vertical-align: top;
+          }
+        }
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

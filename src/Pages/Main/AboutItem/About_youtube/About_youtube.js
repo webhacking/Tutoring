@@ -22,8 +22,7 @@ class AboutYoutube extends React.Component {
       src: "https://img.youtube.com/vi/h3gl3MkEOdY/mqdefault.jpg"
     },
     {
-      title:
-        "튜터링 : 1:1 원어민 영어수다! 학원 갈시간 없는 직장인들에게 강추!!",
+      title: "튜터링 : 1:1 원어민 영어수다! 학원 갈시간 없는 직장인들에게 강추!!",
       src: "https://img.youtube.com/vi/r8pQCBDgq9A/mqdefault.jpg"
     },
     {
@@ -41,8 +40,10 @@ class AboutYoutube extends React.Component {
   ];
 
   videoChangeHandler = e => {
+    const video_id = e.target.dataset.videoSrc.slice(27, 38);
+
     this.setState({
-      video_id: e.target.style.backgroundImage.slice(32, 43)
+      video_id
     });
   };
 
@@ -68,17 +69,19 @@ class AboutYoutube extends React.Component {
           </div>
           <div className="play_list">
             <ul>
-              {this.thumbnailArr.map((el, idx) => {
+              {this.thumbnailArr.map((item, idx) => {
                 return (
                   <li
                     key={idx}
                     className={`thumb_${idx}`}
                     style={{
-                      backgroundImage: `url(${el.src})`
+                      backgroundImage: `url(${item.src})`
                     }}
                     onClick={e => this.videoChangeHandler(e)}
                   >
-                    <p className="thumb_title">{el.title}</p>
+                    <div className="thumb_overlay" data-video-src={item.src}>
+                      <p className="thumb_title">{item.title}</p>
+                    </div>
                   </li>
                 );
               })}
