@@ -16,4 +16,167 @@
   .txt_item {
     margin-bottom: 35px;
   }
+
+  .txt_info {
+    margin-bottom: 40px;
+    line-height: 40px;
+    color: #666;
+  }
+
+  .list_lab {
+    padding: 0;
+
+    li {
+      padding: 40px 0;
+      font-size: 16px;
+      line-height: 26px;
+      color: #666;
+    }
+
+    .tit_lab {
+      display: block;
+      margin-bottom: 30px;
+
+      font-size: 24px;
+      color: #333;
+
+      .txt_b_m {
+        padding-left: 5px;
+      }
+    }
+
+    .list_oval {
+      width: 850px;
+
+      margin: 0 auto;
+      padding-left: 10px;
+
+      overflow: hidden;
+
+      li {
+        width: 280px;
+        float: left;
+
+        position: relative;
+        padding-top: 30px;
+
+        .oval_g {
+          display: block;
+          width: 120px;
+          height: 120px;
+          margin: 0 auto;
+          border-radius: 120px;
+          background-color: #6759ef;
+          color: #ffe812;
+        }
+
+        .txt_lab {
+          display: block;
+
+          margin: 25px 0 15px;
+
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 1;
+
+          color: #333;
+        }
+
+        .desc_txt {
+          width: 188px;
+
+          margin: 0 auto;
+
+          font-size: 16px;
+          line-height: 26px;
+        }
+
+        .ico_g_main {
+          background-image: url("//cdn.tutoring.co.kr/uploads/home/img/main/version3/ico_home_3_190402.png");
+        }
+
+        .ico_common {
+          display: inline-block;
+
+          width: 60px;
+          height: 60px;
+          margin: 30px;
+
+          background-size: 420px 400px;
+        }
+
+        .ico_arr {
+          width: 22px;
+          height: 40px;
+
+          position: absolute;
+          top: 40px;
+          right: -11px;
+
+          margin: 30px auto 0;
+
+          background-size: 420px 400px;
+          background-position: -270px -50px;
+        }
+
+        .ico_topic {
+          background-position: -240px -270px;
+        }
+
+        .ico_brain {
+          background-position: -300px -270px;
+        }
+
+        .ico_chat {
+          background-position: -360px -270px;
+        }
+      }
+    }
+    ol.list_oval .oval_g {
+      height: 73px;
+      padding-top: 50px;
+      font-size: 18px;
+    }
+  }
+
+  .list_card {
+    width: 960px;
+    margin: 0 auto;
+    padding: 29px 0 60px;
+
+    li {
+      display: inline-block;
+      width: 225px;
+      height: 140px;
+
+      position: relative;
+
+      margin-left: 10px;
+      vertical-align: top;
+
+      background-color: #f5f5fa;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      .card_g {
+        padding: 0 20px;
+        text-align: left;
+      }
+
+      .txt_lab {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .txt_tag {
+        position: absolute;
+        bottom: 10px;
+
+        color: #6759ef;
+      }
+    }
+  }
 }
