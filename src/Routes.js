@@ -1,5 +1,7 @@
 import React from "react";
+import Footer from "Components/Footer";
 import Main from "./Pages/Main";
+import Tutors from "./Pages/Tutors";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -14,6 +16,7 @@ class Routes extends React.Component {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/home" component={Main} />
+          <Route exact path="/home/tutors" component={Tutors} />
         </Switch>
       </Router>
     );
