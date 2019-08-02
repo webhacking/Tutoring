@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./tutors.scss";
+import Header from "Components/Header";
+import Footer from "Components/Footer";
 import TutorList from "Components/TutorList";
 import TutorSearchBox from "Components/TutorSearchBox";
 import { tutor_en } from "./Data/Tutor_en";
@@ -41,16 +43,20 @@ class Tutors extends Component {
     });
 
     return (
-      <div className="tutors_wrap">
-        <div className="tutor_container">
-          <h2 className="title">튜터 ({tutor_en.length})</h2>
-          <TutorSearchBox type={type} value={name} clickHandler={this.typeClickHandler} changeHandler={this.onChangeHandler} />
+      <>
+        <Header />
+        <div className="tutors_wrap">
+          <div className="tutor_container">
+            <h2 className="title">튜터 ({tutor_en.length})</h2>
+            <TutorSearchBox type={type} value={name} clickHandler={this.typeClickHandler} changeHandler={this.onChangeHandler} />
 
-          <div className="tutor_list">
-            <TutorList list={filteredList} />
+            <div className="tutor_list">
+              <TutorList list={filteredList} />
+            </div>
           </div>
         </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 }
