@@ -1,10 +1,52 @@
 .tutor_container {
-  height: 80vh;
-
-  text-align: center;
-
   .title {
+    text-align: center;
     font-size: 40px;
+    padding-top: 80px;
+  }
+
+  .filter_box {
+    display: flex;
+    max-width: 1160px;
+    height: 100px;
+
+    margin: 100px auto 0;
+    justify-content: space-between;
+  }
+
+  .filter_left {
+    width: 450px;
+    text-align: left;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 30px;
+      background-color: rgba(102, 102, 102, 0.1);
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    .on {
+      font-weight: 600;
+      background-color: yellow;
+    }
+  }
+
+  .filter_right {
+    width: 300px;
+
+    input {
+      width: 90%;
+      height: 35%;
+      border: 1px solid rgba(102, 102, 102, 0.3);
+      border-radius: 5px;
+      padding-left: 20px;
+    }
   }
 
   // 리스트 감싸고 있는 div
@@ -14,6 +56,11 @@
 
     max-width: 1366px;
     margin: 0 auto;
+
+    ul {
+      width: 100%;
+      text-align: center;
+    }
 
     li {
       display: inline-block;
@@ -26,6 +73,9 @@
       border: 1px solid rgba(200, 200, 200, 0.7);
       border-radius: 15px;
       box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.18);
+
+      animation-name: tutorList;
+      animation-duration: 1s;
     }
 
     .up_box {
@@ -62,7 +112,7 @@
       }
 
       .tutor_common {
-        margin-top: 15px;
+        margin-top: 10px;
       }
     }
 
@@ -75,6 +125,7 @@
       .lesson {
         font-size: 17px;
         font-weight: 600;
+        padding-top: 6px;
       }
 
       .type {
@@ -83,43 +134,16 @@
       }
     }
   }
+}
 
-  .filter_box {
-    display: flex;
-    max-width: 1160px;
-    height: 100px;
-
-    margin: 100px auto 0;
-    justify-content: space-between;
+@keyframes tutorList {
+  0% {
+    opacity: 0;
   }
-
-  .filter_left {
-    width: 450px;
-    text-align: left;
-
-    li {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 5px 20px;
-      cursor: pointer;
-      border-radius: 30px;
-      background-color: rgba(102, 102, 102, 0.1);
-
-      &:first-child {
-        margin-left: 0;
-      }
-    }
+  50% {
+    opacity: 0.5;
   }
-
-  .filter_right {
-    width: 300px;
-
-    .input {
-      width: 90%;
-      height: 35%;
-      border: 1px solid rgba(102, 102, 102, 0.3);
-      border-radius: 5px;
-      padding-left: 20px;
-    }
+  100% {
+    opacity: 1;
   }
 }
