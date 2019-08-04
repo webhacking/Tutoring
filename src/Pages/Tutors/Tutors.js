@@ -38,7 +38,7 @@ class Tutors extends Component {
       if (type !== "") {
         return tutor.type.includes(type);
       }
-
+      
       return tutor.name.toLowerCase().includes(name.toLowerCase());
     });
 

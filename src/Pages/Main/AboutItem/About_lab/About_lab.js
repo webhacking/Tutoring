@@ -57,8 +57,7 @@ const AboutLab = () => {
                 </span>
                 <span className="txt_lab">생동하는 교재</span>
                 <p className="desc_txt">
-                  회화 교육 최적화 <span className="txt_b_t">교재 제공을 위해 </span>매주 개발되는
-                  토픽카드
+                  회화 교육 최적화 <span className="txt_b_t">교재 제공을 위해 </span>매주 개발되는 토픽카드
                 </p>
               </li>
               <li>
@@ -67,8 +66,7 @@ const AboutLab = () => {
                 </span>
                 <span className="txt_lab">강렬한 학습 경험</span>
                 <p className="desc_txt">
-                  이미지와 텍스트, <span className="txt_b_t">음성을 통해 더욱 오래 </span>기억되도록
-                  설계
+                  이미지와 텍스트, <span className="txt_b_t">음성을 통해 더욱 오래 </span>기억되도록 설계
                 </p>
               </li>
               <li>

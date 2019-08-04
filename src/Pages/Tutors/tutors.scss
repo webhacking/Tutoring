@@ -1,4 +1,5 @@
 .tutor_container {
+
   margin-bottom: 100px;
 
   .title {
@@ -48,7 +49,7 @@
       border: 1px solid rgba(102, 102, 102, 0.3);
       border-radius: 5px;
       padding-left: 20px;
-    }
+
   }
 
   // 리스트 감싸고 있는 div
@@ -63,7 +64,6 @@
       width: 100%;
       text-align: center;
     }
-
     li {
       display: inline-block;
 
@@ -147,5 +147,43 @@
   }
   100% {
     opacity: 1;
+
+  .filter_box {
+    display: flex;
+    max-width: 1160px;
+    height: 100px;
+
+    margin: 100px auto 0;
+    justify-content: space-between;
+  }
+
+  .filter_left {
+    width: 450px;
+    text-align: left;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 5px 20px;
+      cursor: pointer;
+      border-radius: 30px;
+      background-color: rgba(102, 102, 102, 0.1);
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .filter_right {
+    width: 300px;
+
+    .input {
+      width: 90%;
+      height: 35%;
+      border: 1px solid rgba(102, 102, 102, 0.3);
+      border-radius: 5px;
+      padding-left: 20px;
+    }
   }
 }
