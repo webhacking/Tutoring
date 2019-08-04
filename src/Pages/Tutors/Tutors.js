@@ -44,7 +44,7 @@ class Tutors extends Component {
 
     return (
       <>
-        <Header />
+        <Header fix={true} />
         <div className="tutors_wrap">
           <div className="tutor_container">
             <h2 className="title">튜터 ({tutor_en.length})</h2>
