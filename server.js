@@ -1,26 +1,56 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const mongoClient = require("mongodb").MongoClient;
 const bodyParser = require("body-parser");
 const request = require("request");
 const cheerio = require("cheerio");
 const app = express();
 const port = process.env.PORT || 3001;
 
+// MongoDB 연결
+const CONNECTION_URL = `mongodb+srv://admin:${encodeURIComponent("1234qwer")}@tutoring-b1srb.mongodb.net/test?retryWrites=true&w=majority`;
+const DATABASE_NAME = "Tutoring";
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//
-const MongoClient = require("mongodb").MongoClient;
-const uri = `mongodb+srv://admin:${encodeURIComponent("1234qwer")}@tutoring-jzsvi.mongodb.net/test?retryWrites=true&w=majority`;
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+
+  //서버와 DB 연결
+  mongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (err, client) => {
+    if (err) {
+      throw error;
+    }
+
+    database = client.db(DATABASE_NAME);
+    collection = database.collection("test");
+    console.log("Connected to " + DATABASE_NAME + "!");
+  });
 });
 
-app.get("/api/test", (req, res) => {
-  res.send({ message: "Hello!!" });
+app.get("/test", (req, res) => {
+  collection.find().toArray((err, result) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    res.send(result);
+  });
+});
+
+app.post("/test/create", (req, res) => {
+  const data = {
+    name: req.body.name,
+    price: req.body.price
+  };
+
+  collection.insertOne(data, (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+
+    res.status(200).send(["data inserted succssfully", result.ops[0]]);
+  });
 });
 
 app.get("/api/tutors", (req, res) => {
@@ -75,5 +105,3 @@ app.get("/api/tutors", (req, res) => {
     }, 1500);
   });
 });
-
-app.listen(port, () => console.log(`Listening on port ${port}`));
