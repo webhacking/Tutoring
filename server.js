@@ -61,7 +61,7 @@ app.get("/api/tutors", (req, res) => {
 
     setTimeout(() => {
       res.send(list);
-    }, 1000);
+    }, 1500);
   });
 });
 

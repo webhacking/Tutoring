@@ -2,12 +2,19 @@ import React, { Component } from "react";
 import "./tutors.scss";
 import Header from "Components/Header";
 import Footer from "Components/Footer";
+import Spinner from "Components/Spinner";
 import TutorList from "Components/TutorList";
 import TutorSearchBox from "Components/TutorSearchBox";
 import { tutor_en } from "./Data/Tutor_en";
 
 class Tutors extends Component {
+  // constructor() {
+  //   super();
+  //   this.state = { isLoaded: true };
+  // }
+
   state = {
+    isLoaded: true,
     name: "",
     type: "",
     tutor_list: [],
@@ -25,13 +32,19 @@ class Tutors extends Component {
   }
 
   getTutors = async () => {
-    const { nowPage } = this.state;
+    const { nowPage, isLoaded } = this.state;
+    console.log(nowPage);
+
+    if (!isLoaded) {
+      this.setState({ isLoaded: true });
+    }
 
     const response = await fetch(`/api/tutors?page=${nowPage}`);
     const body = await response.json();
 
     this.setState({
-      tutor_list: body
+      tutor_list: body,
+      isLoaded: false
     });
   };
 
@@ -80,7 +93,7 @@ class Tutors extends Component {
   };
 
   render() {
-    const { type, name, tutor_list } = this.state;
+    const { type, name, tutor_list, isLoaded } = this.state;
     let filteredList = [];
 
     if (tutor_list) {
@@ -107,9 +120,7 @@ class Tutors extends Component {
               pageHandler={this.pageHandler}
             />
 
-            <div className="tutor_list">
-              <TutorList list={filteredList} />
-            </div>
+            <div className="tutor_list">{isLoaded ? <Spinner /> : <TutorList list={filteredList} />}</div>
           </div>
         </div>
         <Footer />
