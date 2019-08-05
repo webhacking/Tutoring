@@ -37,6 +37,44 @@
       font-weight: 600;
       background-color: yellow;
     }
+
+    .pagination {
+      position: relative;
+
+      .slide_btn {
+        position: absolute;
+        top: 0;
+        bottom: auto;
+        right: auto;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        background-color: #6759ef;
+        background-image: none;
+        outline: none;
+        cursor: pointer;
+
+        &:last-child {
+          left: 50px;
+
+          &::after {
+            background-position: -366px -70px;
+          }
+        }
+
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 12px;
+          height: 22px;
+          margin: 14px 19px;
+
+          background-image: url("//cdn.tutoring.co.kr/uploads/home/img/main/version3/ico_home_3_190402.png");
+          background-position: -350px -70px;
+          background-size: 420px 400px;
+        }
+      }
+    }
   }
 
   .filter_right {

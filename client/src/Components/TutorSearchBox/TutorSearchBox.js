@@ -1,6 +1,6 @@
 import React from "react";
 
-const TutorSearchBox = ({ type, name, clickHandler, changeHandler }) => (
+const TutorSearchBox = ({ type, name, clickHandler, changeHandler, pageHandler }) => (
   <div className="filter_box">
     <div className="filter_left">
       <ul onClick={e => clickHandler(e)}>
@@ -9,6 +9,10 @@ const TutorSearchBox = ({ type, name, clickHandler, changeHandler }) => (
         <li className={type === "Global" ? "on" : null}>Global</li>
         <li className={type === "Chinese" ? "on" : null}>Chinese</li>
       </ul>
+      <div className="pagination">
+        <div onClick={e => pageHandler(e, "-")} className="slide_btn" />
+        <div onClick={e => pageHandler(e, "+")} className="slide_btn" />
+      </div>
     </div>
 
     <div className="filter_right">

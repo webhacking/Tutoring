@@ -10,7 +10,29 @@ class Tutors extends Component {
   state = {
     name: "",
     type: "",
-    tutor_list: tutor_en
+    tutor_list: [],
+    nowPage: 1
+  };
+
+  componentDidMount = () => {
+    this.getTutors();
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.nowPage !== prevState.nowPage) {
+      this.getTutors();
+    }
+  }
+
+  getTutors = async () => {
+    const { nowPage } = this.state;
+
+    const response = await fetch(`/api/tutors?page=${nowPage}`);
+    const body = await response.json();
+
+    this.setState({
+      tutor_list: body
+    });
   };
 
   onChangeHandler = e => {
@@ -31,16 +53,45 @@ class Tutors extends Component {
     }
   };
 
-  render() {
-    const { type, name, tutor_list } = this.state;
+  pageHandler = (e, num) => {
+    let nowPage = this.state.nowPage;
 
-    const filteredList = tutor_list.filter(tutor => {
-      if (type !== "") {
-        return tutor.type.includes(type);
+    if (num === "+") {
+      nowPage++;
+
+      // if (pageNum >= slideList.length - 1) {
+      //   curr_idx = slideList.length - 1;
+      // }
+
+      this.setState({
+        nowPage
+      });
+    } else if (num === "-") {
+      nowPage--;
+
+      if (nowPage < 1) {
+        nowPage = 1;
       }
 
-      return tutor.name.toLowerCase().includes(name.toLowerCase());
-    });
+      this.setState({
+        nowPage
+      });
+    }
+  };
+
+  render() {
+    const { type, name, tutor_list } = this.state;
+    let filteredList = [];
+
+    if (tutor_list) {
+      filteredList = tutor_list.filter(tutor => {
+        if (type !== "") {
+          return tutor.type.includes(type);
+        }
+
+        return tutor.name.toLowerCase().includes(name.toLowerCase());
+      });
+    }
 
     return (
       <>
@@ -48,7 +99,13 @@ class Tutors extends Component {
         <div className="tutors_wrap">
           <div className="tutor_container">
             <h2 className="title">튜터 ({tutor_en.length})</h2>
-            <TutorSearchBox type={type} value={name} clickHandler={this.typeClickHandler} changeHandler={this.onChangeHandler} />
+            <TutorSearchBox
+              type={type}
+              value={name}
+              clickHandler={this.typeClickHandler}
+              changeHandler={this.onChangeHandler}
+              pageHandler={this.pageHandler}
+            />
 
             <div className="tutor_list">
               <TutorList list={filteredList} />

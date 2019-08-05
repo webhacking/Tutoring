@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "Components/Footer";
 import Main from "./Pages/Main";
 import Tutors from "./Pages/Tutors";
 
