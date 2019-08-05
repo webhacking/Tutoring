@@ -4,7 +4,7 @@
   .title {
     text-align: center;
     font-size: 40px;
-    padding-top: 80px;
+    padding-top: 130px;
   }
 
   .filter_box {
@@ -37,51 +37,13 @@
       font-weight: 600;
       background-color: yellow;
     }
-
-    .pagination {
-      position: relative;
-
-      .slide_btn {
-        position: absolute;
-        top: 0;
-        bottom: auto;
-        right: auto;
-        width: 50px;
-        height: 50px;
-        margin: 0;
-        background-color: #6759ef;
-        background-image: none;
-        outline: none;
-        cursor: pointer;
-
-        &:last-child {
-          left: 50px;
-
-          &::after {
-            background-position: -366px -70px;
-          }
-        }
-
-        &::after {
-          content: "";
-          display: inline-block;
-          width: 12px;
-          height: 22px;
-          margin: 14px 19px;
-
-          background-image: url("//cdn.tutoring.co.kr/uploads/home/img/main/version3/ico_home_3_190402.png");
-          background-position: -350px -70px;
-          background-size: 420px 400px;
-        }
-      }
-    }
   }
 
   .filter_right {
     width: 300px;
 
     input {
-      width: 90%;
+      width: 97%;
       height: 35%;
       border: 1px solid rgba(102, 102, 102, 0.3);
       border-radius: 5px;
@@ -95,7 +57,7 @@
     flex-wrap: wrap;
 
     max-width: 1366px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
 
     ul {
       width: 100%;
@@ -170,6 +132,47 @@
       .type {
         font-size: 13px;
         color: rgba(102, 102, 102, 0.5);
+      }
+    }
+  }
+
+  .pagination {
+    width: 100%;
+    min-height: 50px;
+    position: relative;
+    left: 47%;
+
+    .slide_btn {
+      position: absolute;
+      top: 0;
+      bottom: auto;
+      right: auto;
+      width: 50px;
+      height: 50px;
+      margin: 0;
+      background-color: #6759ef;
+      background-image: none;
+      outline: none;
+      cursor: pointer;
+
+      &:last-child {
+        left: 50px;
+
+        &::after {
+          background-position: -366px -70px;
+        }
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 22px;
+        margin: 14px 19px;
+
+        background-image: url("//cdn.tutoring.co.kr/uploads/home/img/main/version3/ico_home_3_190402.png");
+        background-position: -350px -70px;
+        background-size: 420px 400px;
       }
     }
   }

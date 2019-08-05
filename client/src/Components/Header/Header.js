@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import "./header.scss";
 
 class Header extends Component {
+  goHome = () => {
+    window.location.href = "/home";
+  };
+
   render() {
     const { fix } = this.props;
 
@@ -9,7 +13,7 @@ class Header extends Component {
       <div className={`header_wrap ${fix === true ? "fixed" : ""}`}>
         <h1 className="main_logo">
           튜터링
-          <button type="button" className="logo_img" />
+          <button type="button" className="logo_img" onClick={this.goHome} />
         </h1>
       </div>
     );

@@ -5,14 +5,9 @@ import Footer from "Components/Footer";
 import Spinner from "Components/Spinner";
 import TutorList from "Components/TutorList";
 import TutorSearchBox from "Components/TutorSearchBox";
-import { tutor_en } from "./Data/Tutor_en";
+// import { tutor_en } from "./Data/Tutor_en";
 
 class Tutors extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = { isLoaded: true };
-  // }
-
   state = {
     isLoaded: true,
     name: "",
@@ -33,7 +28,7 @@ class Tutors extends Component {
 
   getTutors = async () => {
     const { nowPage, isLoaded } = this.state;
-    console.log(nowPage);
+    // console.log(nowPage);
 
     if (!isLoaded) {
       this.setState({ isLoaded: true });
@@ -42,10 +37,26 @@ class Tutors extends Component {
     const response = await fetch(`/api/tutors?page=${nowPage}`);
     const body = await response.json();
 
-    this.setState({
-      tutor_list: body,
-      isLoaded: false
-    });
+    this.setState(
+      {
+        tutor_list: body,
+        isLoaded: false
+      },
+      () => {
+        this.scrollHandler();
+      }
+    );
+  };
+
+  scrollHandler = () => {
+    const currScrollY = window.scrollY;
+
+    if (currScrollY >= 2134) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
   };
 
   onChangeHandler = e => {
@@ -105,13 +116,12 @@ class Tutors extends Component {
         return tutor.name.toLowerCase().includes(name.toLowerCase());
       });
     }
-
     return (
       <>
         <Header fix={true} />
         <div className="tutors_wrap">
           <div className="tutor_container">
-            <h2 className="title">튜터 ({tutor_en.length})</h2>
+            <h2 className="title">튜터 ({tutor_list.length})</h2>
             <TutorSearchBox
               type={type}
               value={name}
@@ -121,6 +131,10 @@ class Tutors extends Component {
             />
 
             <div className="tutor_list">{isLoaded ? <Spinner /> : <TutorList list={filteredList} />}</div>
+            <div className="pagination">
+              <div onClick={e => this.pageHandler(e, "-")} className="slide_btn" />
+              <div onClick={e => this.pageHandler(e, "+")} className="slide_btn" />
+            </div>
           </div>
         </div>
         <Footer />
