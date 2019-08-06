@@ -31,7 +31,7 @@ app.listen(port, () => {
   });
 });
 
-app.get("/test", (req, res) => {
+app.get("/crawling/all", (req, res) => {
   collection.find().toArray((err, result) => {
     if (err) {
       return res.status(500).send(err);
@@ -41,13 +41,13 @@ app.get("/test", (req, res) => {
   });
 });
 
-app.delete("/test/delete", (req, res) => {
+app.delete("/crawling/delete", (req, res) => {
   collection.deleteMany({});
 
   res.send("deleted all collection");
 });
 
-app.post("/test/create", (req, res) => {
+app.post("/crawling/create", (req, res) => {
   const page = req.body.page;
 
   request(`https://tutoring.co.kr/home/tutors?page=${page}`, (err, response, html) => {

@@ -19,11 +19,12 @@ class Tutors extends Component {
   };
 
   componentWillMount = () => {
-    this.getTutors();
+    this.getTutorNum();
   };
 
   componentDidMount = () => {
-    this.getTutorNum();
+    document.title = "튜터";
+    this.getTutors();
   };
 
   getTutorNum = async () => {
