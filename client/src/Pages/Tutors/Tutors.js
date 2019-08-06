@@ -21,12 +21,6 @@ class Tutors extends Component {
     this.getTutors();
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.nowPage !== prevState.nowPage) {
-      this.getTutors();
-    }
-  }
-
   getTutors = async () => {
     const { start, end, isLoaded } = this.state;
     // console.log(nowPage);
@@ -38,17 +32,14 @@ class Tutors extends Component {
     const response = await fetch(`/tutors?start=${start}&end=${end}`);
     const body = await response.json();
 
-    this.setState(
-      {
-        tutor_list: body,
-        isLoaded: false
-      },
-      () => {
-        this.scrollHandler();
-      }
-    );
-
-    // console.log(body);
+    this.setState({
+      tutor_list: body,
+      isLoaded: false
+      // },
+      // () => {
+      //   this.scrollHandler();
+      // }
+    });
   };
 
   handleShowMore = async () => {
@@ -67,16 +58,16 @@ class Tutors extends Component {
     });
   };
 
-  scrollHandler = () => {
-    const currScrollY = window.scrollY;
+  // scrollHandler = () => {
+  //   const currScrollY = window.scrollY;
 
-    if (currScrollY >= 2134) {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
-  };
+  //   if (currScrollY >= 2134) {
+  //     window.scrollTo({
+  //       top: 0,
+  //       behavior: "smooth"
+  //     });
+  //   }
+  // };
 
   onChangeHandler = e => {
     this.setState({
