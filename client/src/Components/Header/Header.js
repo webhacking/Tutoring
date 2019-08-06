@@ -28,25 +28,30 @@ class Header extends Component {
     const { isHover } = this.state;
 
     return (
-      <div className={`header_wrap ${fix === true || isHover === true ? "fixed" : ""}`} onMouseLeave={this.handleLeave}>
-        <h1 className="main_logo">
-          <span className="logo_span" onClick={this.goHome}>
-            튜터링
-          </span>
-        </h1>
-        <p className="logo_sub">24시간 1:1 영어회화앱</p>
-        <nav className="gnb" onMouseOver={this.handleHover}>
-          <ul>
-            <li>수강권보기</li>
-            <Link to="/home/tutors">
-              <li>튜터소개</li>
-            </Link>
-            <li>토픽소개</li>
-            <li>수강후기</li>
-            <li>B2B프로그램</li>
-          </ul>
-        </nav>
-      </div>
+      <header className={`header_wrap ${fix === true || isHover === true ? "fixed" : ""}`}>
+        <div className="header_inner" onMouseLeave={this.handleLeave}>
+          <h1 className="main_logo">
+            <span className="logo_span" onClick={this.goHome}>
+              튜터링
+            </span>
+          </h1>
+          <p className="logo_sub">24시간 1:1 영어회화앱</p>
+          <nav className="gnb" onMouseOver={this.handleHover}>
+            <ul>
+              <li>수강권보기</li>
+              <Link to="/home/tutors">
+                <li>튜터소개</li>
+              </Link>
+              <li>토픽소개</li>
+              <li>수강후기</li>
+              <li>B2B프로그램</li>
+            </ul>
+          </nav>
+        </div>
+        <div className={`sub_gnb ${isHover === true ? "show_sub" : ""}`}>
+          <p>여기에 서브 메뉴</p>
+        </div>
+      </header>
     );
   }
 }
