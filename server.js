@@ -6,6 +6,9 @@ const cheerio = require("cheerio");
 const app = express();
 const port = process.env.PORT || 3001;
 
+// db에 저장시 sequnce 대용으로 일단 사용...
+let tutor_idx = 0;
+
 // MongoDB 연결
 const CONNECTION_URL = `mongodb+srv://admin:${encodeURIComponent("1234qwer")}@tutoring-b1srb.mongodb.net/test?retryWrites=true&w=majority`;
 const DATABASE_NAME = "Tutoring";
@@ -38,26 +41,14 @@ app.get("/test", (req, res) => {
   });
 });
 
-app.post("/test/create", (req, res) => {
-  const data = {
-    name: req.body.name,
-    price: req.body.price
-  };
+app.delete("/test/delete", (req, res) => {
+  collection.deleteMany({});
 
-  collection.insertOne(data, (err, result) => {
-    if (err) {
-      console.log(err);
-    }
-
-    res.status(200).send(["data inserted succssfully", result.ops[0]]);
-  });
+  res.send("deleted all collection");
 });
 
-app.get("/api/tutors", (req, res) => {
-  const page = req.query.page;
-  const list = [];
-
-  // console.log("page숫자", page);
+app.post("/test/create", (req, res) => {
+  const page = req.body.page;
 
   request(`https://tutoring.co.kr/home/tutors?page=${page}`, (err, response, html) => {
     if (!err && response.statusCode == 200) {
@@ -66,7 +57,7 @@ app.get("/api/tutors", (req, res) => {
 
       tutorList.each((i, el) => {
         const item = {
-          tutor_id: i,
+          tutor_id: tutor_idx,
           img_url: $(el)
             .children("a")
             .children("div.t_box")
@@ -96,12 +87,48 @@ app.get("/api/tutors", (req, res) => {
             .text()
         };
 
-        list.push(item);
+        tutor_idx++;
+
+        collection.insertOne(item, (err, result) => {
+          if (err) {
+            throw err;
+          }
+        });
       });
+
+      res.status(200).send("data inserted succssfully");
+    }
+  });
+});
+
+// app.post("/test/create", (req, res) => {
+//   const data = {
+//     name: req.body.name,
+//     price: req.body.price
+//   };
+
+//   collection.insertOne(data, (err, result) => {
+//     if (err) {
+//       console.log(err);
+//     }
+
+//     res.status(200).send(["data inserted succssfully", result.ops[0]]);
+//   });
+// });
+
+app.get("/tutors", (req, res) => {
+  const startNum = Number(req.query.start);
+  const endNum = Number(req.query.end);
+
+  console.log(startNum, endNum);
+  //$gte = greater than or equal to
+  //$lt  = less than
+
+  collection.find({ tutor_id: { $gte: startNum, $lt: endNum } }).toArray((err, result) => {
+    if (err) {
+      return res.status(500).send(err);
     }
 
-    setTimeout(() => {
-      res.send(list);
-    }, 1500);
+    res.send(result);
   });
 });

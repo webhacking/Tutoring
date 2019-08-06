@@ -13,7 +13,8 @@ class Tutors extends Component {
     name: "",
     type: "",
     tutor_list: [],
-    nowPage: 1
+    start: 0,
+    end: 20
   };
 
   componentDidMount = () => {
@@ -27,14 +28,14 @@ class Tutors extends Component {
   }
 
   getTutors = async () => {
-    const { nowPage, isLoaded } = this.state;
+    const { start, end, isLoaded } = this.state;
     // console.log(nowPage);
 
     if (!isLoaded) {
       this.setState({ isLoaded: true });
     }
 
-    const response = await fetch(`/api/tutors?page=${nowPage}`);
+    const response = await fetch(`/tutors?start=${start}&end=${end}`);
     const body = await response.json();
 
     this.setState(
@@ -46,6 +47,24 @@ class Tutors extends Component {
         this.scrollHandler();
       }
     );
+
+    // console.log(body);
+  };
+
+  handleShowMore = async () => {
+    const { tutor_list } = this.state;
+
+    const start = tutor_list.length;
+    const end = start + 20;
+
+    const res = await fetch(`/tutors?start=${start}&end=${end}`);
+    const data = await res.json();
+
+    // console.log(data);
+
+    this.setState({
+      tutor_list: [...tutor_list, ...data]
+    });
   };
 
   scrollHandler = () => {
@@ -77,31 +96,31 @@ class Tutors extends Component {
     }
   };
 
-  pageHandler = (e, num) => {
-    let nowPage = this.state.nowPage;
+  // pageHandler = () => {
+  //   let nowPage = this.state.nowPage;
 
-    if (num === "+") {
-      nowPage++;
+  //   if (num === "+") {
+  //     nowPage++;
 
-      // if (pageNum >= slideList.length - 1) {
-      //   curr_idx = slideList.length - 1;
-      // }
+  //     // if (pageNum >= slideList.length - 1) {
+  //     //   curr_idx = slideList.length - 1;
+  //     // }
 
-      this.setState({
-        nowPage
-      });
-    } else if (num === "-") {
-      nowPage--;
+  //     this.setState({
+  //       nowPage
+  //     });
+  //   } else if (num === "-") {
+  //     nowPage--;
 
-      if (nowPage < 1) {
-        nowPage = 1;
-      }
+  //     if (nowPage < 1) {
+  //       nowPage = 1;
+  //     }
 
-      this.setState({
-        nowPage
-      });
-    }
-  };
+  //     this.setState({
+  //       nowPage
+  //     });
+  //   }
+  // };
 
   render() {
     const { type, name, tutor_list, isLoaded } = this.state;
@@ -132,8 +151,9 @@ class Tutors extends Component {
 
             <div className="tutor_list">{isLoaded ? <Spinner /> : <TutorList list={filteredList} />}</div>
             <div className="pagination">
-              <div onClick={e => this.pageHandler(e, "-")} className="slide_btn" />
-              <div onClick={e => this.pageHandler(e, "+")} className="slide_btn" />
+              <div onClick={this.handleShowMore} className="showmore">
+                <p>더 보기</p>
+              </div>
             </div>
           </div>
         </div>
