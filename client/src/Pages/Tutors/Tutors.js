@@ -13,12 +13,26 @@ class Tutors extends Component {
     name: "",
     type: "",
     tutor_list: [],
+    tutor_total: 0,
     start: 0,
     end: 20
   };
 
-  componentDidMount = () => {
+  componentWillMount = () => {
     this.getTutors();
+  };
+
+  componentDidMount = () => {
+    this.getTutorNum();
+  };
+
+  getTutorNum = async () => {
+    const response = await fetch("/tutors/total");
+    const num = await response.json();
+
+    this.setState({
+      tutor_total: num.totalNum
+    });
   };
 
   getTutors = async () => {
@@ -33,8 +47,8 @@ class Tutors extends Component {
     const body = await response.json();
 
     this.setState({
-      tutor_list: body,
-      isLoaded: false
+      isLoaded: false,
+      tutor_list: body
       // },
       // () => {
       //   this.scrollHandler();
@@ -114,7 +128,7 @@ class Tutors extends Component {
   // };
 
   render() {
-    const { type, name, tutor_list, isLoaded } = this.state;
+    const { type, name, tutor_list, tutor_total, isLoaded } = this.state;
     let filteredList = [];
 
     if (tutor_list) {
@@ -131,7 +145,7 @@ class Tutors extends Component {
         <Header fix={true} />
         <div className="tutors_wrap">
           <div className="tutor_container">
-            <h2 className="title">튜터 ({tutor_list.length})</h2>
+            <h2 className="title">튜터 ({tutor_total})</h2>
             <TutorSearchBox
               type={type}
               value={name}

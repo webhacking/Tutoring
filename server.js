@@ -26,7 +26,7 @@ app.listen(port, () => {
     }
 
     database = client.db(DATABASE_NAME);
-    collection = database.collection("test");
+    collection = database.collection("tutors");
     console.log("Connected to " + DATABASE_NAME + "!");
   });
 });
@@ -116,14 +116,26 @@ app.post("/test/create", (req, res) => {
 //   });
 // });
 
+app.get("/tutors/total", (req, res) => {
+  collection.find({}).count((err, totalNum) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    res.send({ totalNum });
+  });
+});
+
 app.get("/tutors", (req, res) => {
   const startNum = Number(req.query.start);
   const endNum = Number(req.query.end);
 
-  console.log(startNum, endNum);
+  // let resultArr = [];
+  // let total = 0;
+
+  // console.log(startNum, endNum);
   //$gte = greater than or equal to
   //$lt  = less than
-
   collection.find({ tutor_id: { $gte: startNum, $lt: endNum } }).toArray((err, result) => {
     if (err) {
       return res.status(500).send(err);
@@ -131,4 +143,17 @@ app.get("/tutors", (req, res) => {
 
     res.send(result);
   });
+
+  // collection.find({}).count((err, totalNum) => {
+  //   if (err) {
+  //     return res.status(500).send(err);
+  //   }
+
+  //   total = totalNum;
+  //   console.log(total);
+  // });
+
+  // setTimeout(() => {
+  //   res.send({ result: resultArr, totalNum: total });
+  // }, 2000);
 });
