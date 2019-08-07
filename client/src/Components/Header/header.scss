@@ -47,21 +47,21 @@
 
   // Nav CSS
   .gnb {
-    width: 800px;
+    width: 660px;
     position: absolute;
     top: 33px;
     left: 50%;
     margin-left: -200px;
 
     ul {
-      a {
-        color: inherit;
-      }
-
       li {
         display: inline-block;
         font-size: 19px;
         padding-right: 50px;
+
+        &:hover {
+          color: #6759ef;
+        }
       }
     }
   }
@@ -80,7 +80,7 @@
 
   opacity: 0;
 
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 .sub_gnb_ul {
@@ -108,6 +108,10 @@ button {
 
   &:first-child {
     margin-top: 20px;
+  }
+
+  &:hover {
+    color: #6759ef;
   }
 }
 

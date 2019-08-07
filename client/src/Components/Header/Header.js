@@ -55,32 +55,32 @@ class Header extends Component {
         </div>
         <div className={`sub_gnb ${isHover === true ? "show_sub" : ""}`} onMouseLeave={this.handleLeave}>
           <ul className="sub_gnb_ul">
-            <li className={`sub_list sub_list_01 ${selectedMenu === "수강권보기" ? "selected" : null}`}>
+            <li className={`sub_list sub_list_01 ${selectedMenu === "수강권보기" ? "selected" : ""}`}>
               <button type="button">기본 수강권(영어)</button>
               <button type="button">기본 수강권(중국어)</button>
               <img src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/tudal_gnb01.png" alt="튜달이" className="sub_icon" />
             </li>
-            <li className={`sub_list sub_list_02 ${selectedMenu === "수강권보기" && "selected"}`}>
+            <li className={`sub_list sub_list_02 ${selectedMenu === "수강권보기" ? "selected" : ""}`}>
               <button type="button">직딩의 품격</button>
               <button type="button">무빙마스터</button>
               <button type="button">100일의 기적</button>
               <button type="button">결합상품</button>
             </li>
-            <li className={`sub_list sub_list_03 ${selectedMenu === "튜터소개" && "selected"}`}>
+            <li className={`sub_list sub_list_03 ${selectedMenu === "튜터소개" ? "selected" : ""}`}>
               <Link to="/home/tutors">
                 <button type="button">영어 튜터</button>
               </Link>
               <button type="button">중국어 튜터</button>
               <img src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/tudal_gnb02.png" alt="튜달이" className="sub_icon" />
             </li>
-            <li className={`sub_list sub_list_04 ${selectedMenu === "토픽소개" && "selected"}`}>
+            <li className={`sub_list sub_list_04 ${selectedMenu === "토픽소개" ? "selected" : ""}`}>
               <button type="button">영어 토픽</button>
               <button type="button">중국어 토픽</button>
               <button type="button">카드 뉴스</button>
               <button type="button">Editor's Pick</button>
               <img src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/tudal_gnb03.png" alt="튜달이" className="sub_icon" />
             </li>
-            <li className={`sub_list sub_list_05 ${selectedMenu === "B2B프로그램" && "selected"}`}>
+            <li className={`sub_list sub_list_05 ${selectedMenu === "B2B프로그램" ? "selected" : ""}`}>
               <button type="button">기업 수강/제휴 할인</button>
               <img src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/tudal_gnb05.png" alt="튜달이" className="sub_icon" />
             </li>
