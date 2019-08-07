@@ -31,21 +31,17 @@ class ReviewSlide extends React.Component {
       if (curr_idx >= slideList.length - 1) {
         curr_idx = slideList.length - 1;
       }
-
-      this.setState({
-        show_idx: curr_idx
-      });
     } else {
       curr_idx--;
 
       if (curr_idx < 0) {
         curr_idx = 0;
       }
-
-      this.setState({
-        show_idx: curr_idx
-      });
     }
+
+    this.setState({
+      show_idx: curr_idx
+    });
   };
 
   render() {
@@ -53,9 +49,7 @@ class ReviewSlide extends React.Component {
       <>
         <div className="slider_wrap">
           {slideList.map((item, idx) => {
-            return (
-              <SlideItem key={idx} image_url={item.img_src} show={this.state.show_idx} num={idx} />
-            );
+            return <SlideItem key={idx} image_url={item.img_src} show={this.state.show_idx} num={idx} />;
           })}
         </div>
         <div onClick={e => this.handleShow(e, "-")} className="slide_btn" />

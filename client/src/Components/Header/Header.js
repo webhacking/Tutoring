@@ -29,7 +29,7 @@ class Header extends Component {
 
     return (
       <header className={`header_wrap ${fix === true || isHover === true ? "fixed" : ""}`}>
-        <div className="header_inner" onMouseLeave={this.handleLeave}>
+        <div className="header_inner">
           <h1 className="main_logo">
             <span className="logo_span" onClick={this.goHome}>
               튜터링
@@ -48,7 +48,7 @@ class Header extends Component {
             </ul>
           </nav>
         </div>
-        <div className={`sub_gnb ${isHover === true ? "show_sub" : ""}`}>
+        <div className={`sub_gnb ${isHover === true ? "show_sub" : ""}`} onMouseLeave={this.handleLeave}>
           <p>여기에 서브 메뉴</p>
         </div>
       </header>
