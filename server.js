@@ -136,13 +136,16 @@ app.get("/tutors", (req, res) => {
   // console.log(startNum, endNum);
   //$gte = greater than or equal to
   //$lt  = less than
-  collection.find({ tutor_id: { $gte: startNum, $lt: endNum } }).toArray((err, result) => {
-    if (err) {
-      return res.status(500).send(err);
-    }
+  collection
+    .find({ tutor_id: { $gte: startNum, $lt: endNum } })
+    .sort({ tutor_id: 1 })
+    .toArray((err, result) => {
+      if (err) {
+        return res.status(500).send(err);
+      }
 
-    res.send(result);
-  });
+      res.send(result);
+    });
 
   // collection.find({}).count((err, totalNum) => {
   //   if (err) {
