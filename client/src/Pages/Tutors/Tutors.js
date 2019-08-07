@@ -5,6 +5,7 @@ import Footer from "Components/Footer";
 import Spinner from "Components/Spinner";
 import TutorList from "Components/TutorList";
 import TutorSearchBox from "Components/TutorSearchBox";
+import EmptyResult from "Components/TutorEmptyResultPage";
 // import { tutor_en } from "./Data/Tutor_en";
 
 class Tutors extends Component {
@@ -155,7 +156,7 @@ class Tutors extends Component {
               pageHandler={this.pageHandler}
             />
 
-            <div className="tutor_list">{isLoaded ? <Spinner /> : <TutorList list={filteredList} />}</div>
+            <div className="tutor_list">{isLoaded ? <Spinner /> : filteredList.length > 0 ? <TutorList list={filteredList} /> : <EmptyResult />}</div>
             <div className="pagination">
               <div onClick={this.handleShowMore} className="showmore">
                 <p>더 보기</p>
