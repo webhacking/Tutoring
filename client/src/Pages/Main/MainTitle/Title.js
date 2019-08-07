@@ -6,7 +6,8 @@ const Title = () => (
   <div className="main_image_wrapper">
     <div className="main_text_wrap">
       <h3 className="main_text_title">
-        시공간 개념없는 요즘 영어
+        소비자가 직접 뽑은
+        <br /> 1:1 영어회화 부문 1위!
         <em>24시간 1:1 영어회화앱</em>
       </h3>
     </div>

@@ -160,7 +160,7 @@ button {
 }
 
 .fixed {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fff;
   color: black;
 
   .header_inner {
@@ -176,6 +176,6 @@ button {
 .show_sub {
   // display: block;
   visibility: visible;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #fff;
   opacity: 1;
 }

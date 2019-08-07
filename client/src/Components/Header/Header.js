@@ -13,6 +13,10 @@ class Header extends Component {
   };
 
   handleHover = () => {
+    if (this.state.isHover) {
+      return;
+    }
+
     this.setState({
       isHover: true
     });
