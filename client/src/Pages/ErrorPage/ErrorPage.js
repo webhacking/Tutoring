@@ -12,7 +12,7 @@ class ErrorPage extends Component {
       <div id="notfound">
         <div className="notfound">
           <div className="notfound-404">
-            <h1>저런!</h1>
+            <img src="//cdn.tutoring.co.kr/uploads/home/img/plans/moviengMaster/tudal_counsel.png?v=1" class="tudal_counsel" alt="" />
           </div>
           <h2>페이지가 사라졌어요!</h2>
           <p>찾으시는 페이지 주소가 잘못됐거나 일시적인 문제가 발생했습니다.</p>
