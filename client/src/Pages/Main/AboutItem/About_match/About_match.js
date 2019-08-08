@@ -1,4 +1,5 @@
 import React from "react";
+import { cdn_url } from "config/constants";
 import "./match.scss";
 
 const AboutMatch = () => (
@@ -19,22 +20,12 @@ const AboutMatch = () => (
         1:1 로 원어민과 소통하는 것입니다.
       </p>
       <div className="thumb_item">
-        <img
-          src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/img_pyramid.png"
-          className="img_g"
-          alt="match"
-        />
+        <img src={`${cdn_url}/version3/img_pyramid.png`} className="img_g" alt="match" />
         <span>학습 효율성 피라미드</span>
-        <span className="txt_info">
-          (출처 : National Training Laboratories, Bethel, Maine)
-        </span>
+        <span className="txt_info">(출처 : National Training Laboratories, Bethel, Maine)</span>
       </div>
     </div>
-    <img
-      src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_slice_02.png"
-      className="bg_slice"
-      alt=""
-    />
+    <img src={`${cdn_url}/version3/bg_slice_02.png`} className="bg_slice" alt="" />
   </div>
 );
 

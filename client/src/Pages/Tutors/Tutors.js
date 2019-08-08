@@ -19,12 +19,13 @@ class Tutors extends Component {
     end: 20
   };
 
-  componentWillMount = () => {
-    this.getTutorNum();
-  };
+  // componentWillMount = () => {
+  //   this.getTutorNum();
+  // };
 
   componentDidMount = () => {
     document.title = "튜터";
+    this.getTutorNum();
     this.getTutors();
   };
 
@@ -92,15 +93,15 @@ class Tutors extends Component {
   };
 
   typeClickHandler = e => {
-    if (e.target.innerHTML === "All") {
-      this.setState({
-        type: ""
-      });
+    let clickedType = "";
+
+    if (e.target.innerHTML !== "All") {
+      clickedType = e.target.innerHTML;
     } else {
-      this.setState({
-        type: e.target.innerHTML
-      });
+      clickedType = "";
     }
+
+    this.setState({ type: clickedType });
   };
 
   // pageHandler = () => {
@@ -158,9 +159,11 @@ class Tutors extends Component {
 
             <div className="tutor_list">{isLoaded ? <Spinner /> : filteredList.length > 0 ? <TutorList list={filteredList} /> : <EmptyResult />}</div>
             <div className="pagination">
-              <div onClick={this.handleShowMore} className="showmore">
-                <p>더 보기</p>
-              </div>
+              {filteredList.length > 0 && (
+                <div onClick={this.handleShowMore} className="showmore">
+                  <p>더 보기</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -59,7 +59,7 @@
   margin-top: 0px;
 }
 
-.notfound a {
+.notfound span {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   text-transform: uppercase;
@@ -69,6 +69,8 @@
   border-radius: 40px;
   color: #fff;
   font-weight: 700;
+
+  cursor: pointer;
   -webkit-box-shadow: 0px 4px 15px -5px #0046d5;
   box-shadow: 0px 4px 15px -5px #0046d5;
 }

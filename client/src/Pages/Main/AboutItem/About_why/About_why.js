@@ -1,4 +1,5 @@
 import React from "react";
+import { cdn_url } from "config/constants";
 import "./why.scss";
 
 const AboutWhy = () => (
@@ -29,16 +30,8 @@ const AboutWhy = () => (
         </ul>
         <span className="bg_txt bg_no">No</span>
       </div>
-      <img
-        src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_slice_01.png"
-        className="bg_slice bg_slice_m"
-        alt=""
-      />
-      <img
-        src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_slice_02.png"
-        className="bg_slice bg_slice_pc"
-        alt=""
-      />
+      <img src={`${cdn_url}/version3/bg_slice_01.png`} className="bg_slice bg_slice_m" alt="" />
+      <img src={`${cdn_url}/version3/bg_slice_02.png`} className="bg_slice bg_slice_pc" alt="" />
     </div>
     <div className="about_right">
       <div className="right_innerbox">
@@ -65,16 +58,8 @@ const AboutWhy = () => (
           </li>
         </ul>
         <span className="bg_txt bg_yes">No</span>
-        <img
-          src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_slice_02.png"
-          className="bg_slice bg_slice_m"
-          alt=""
-        />
-        <img
-          src="//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_slice_after.png"
-          className="bg_slice bg_slice_pc"
-          alt=""
-        />
+        <img src={`${cdn_url}/version3/bg_slice_02.png`} className="bg_slice bg_slice_m" alt="" />
+        <img src={`${cdn_url}/version3/bg_slice_after.png`} className="bg_slice bg_slice_pc" alt="" />
       </div>
     </div>
   </div>

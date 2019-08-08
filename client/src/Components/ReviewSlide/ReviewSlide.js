@@ -1,19 +1,20 @@
 import React from "react";
 import SlideItem from "Components/ReviewSlideItem";
+import { cdn_url } from "config/constants";
 import "./slide.scss";
 
 const slideList = [
   {
-    img_src: "//cdn.tutoring.co.kr/uploads/home/img/main/version3/story_01_pc.png"
+    img_src: `${cdn_url}/version3/story_01_pc.png`
   },
   {
-    img_src: "//cdn.tutoring.co.kr/uploads/home/img/main/version3/story_02_pc.png"
+    img_src: `${cdn_url}/version3/story_02_pc.png`
   },
   {
-    img_src: "//cdn.tutoring.co.kr/uploads/home/img/main/version3/story_03_pc.png"
+    img_src: `${cdn_url}/version3/story_03_pc.png`
   },
   {
-    img_src: "//cdn.tutoring.co.kr/uploads/home/img/main/version3/story_04_pc.png"
+    img_src: `${cdn_url}/version3/story_04_pc.png`
   }
 ];
 
