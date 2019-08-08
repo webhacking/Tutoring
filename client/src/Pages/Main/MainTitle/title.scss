@@ -1,12 +1,26 @@
 @import "Style/color.scss";
 
 .main_image_wrapper {
-  height: 850px;
+  @media screen and (min-width: 768px) {
+    height: 1024px;
+    background: url("http://cdn.tutoring.co.kr/uploads/home/img/main/version3/main_visual_t2.jpg") no-repeat;
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 850px;
+    position: relative;
+
+    background: url("http://cdn.tutoring.co.kr/uploads/home/img/main/version3/main_visual_pc2.jpg") no-repeat;
+    background-size: cover;
+
+    letter-spacing: -2px;
+  }
+
+  height: 640px;
   position: relative;
-
-  background: url("http://cdn.tutoring.co.kr/uploads/home/img/main/version3/main_visual_pc2.jpg") no-repeat;
+  background: url("http://cdn.tutoring.co.kr/uploads/home/img/main/version3/main_visual_m2.jpg") no-repeat;
   background-size: cover;
-
   letter-spacing: -2px;
 
   .main_text_wrap {
