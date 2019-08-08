@@ -235,13 +235,6 @@ button,
   font-size: 0;
   line-height: 0;
   visibility: hidden;
-} /* 테이블내 caption에 사용 */
-.cl_b {
-  width: 0;
-  height: 0;
-  font-size: 0;
-  line-height: 0;
-  clear: both;
 }
 .show {
   display: block;
@@ -295,20 +288,11 @@ button,
   padding-top: 20px;
   font-size: 20px;
   line-height: 1;
-  background: url("//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_btn_gra.png") 0 0
-    no-repeat;
+  background: url("//cdn.tutoring.co.kr/uploads/home/img/main/version3/bg_btn_gra.png") 0 0 no-repeat;
   background-size: 100% 100%;
   color: #fff;
   text-align: center;
   z-index: 1;
-}
-.cell_tbl {
-  display: table;
-  width: 100%;
-}
-.cell_tbl .inner_g {
-  display: table-cell;
-  vertical-align: middle;
 }
 .txt_b_m {
   display: block;

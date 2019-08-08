@@ -143,6 +143,9 @@ class Tutors extends Component {
         return tutor.name.toLowerCase().includes(name.toLowerCase());
       });
     }
+
+    let resultComponent = filteredList.length > 0 ? <TutorList list={filteredList} /> : <EmptyResult />;
+
     return (
       <>
         <Header fix={true} />
@@ -157,7 +160,7 @@ class Tutors extends Component {
               pageHandler={this.pageHandler}
             />
 
-            <div className="tutor_list">{isLoaded ? <Spinner /> : filteredList.length > 0 ? <TutorList list={filteredList} /> : <EmptyResult />}</div>
+            <div className="tutor_list">{isLoaded ? <Spinner /> : resultComponent}</div>
             <div className="pagination">
               {filteredList.length > 0 && (
                 <div onClick={this.handleShowMore} className="showmore">
