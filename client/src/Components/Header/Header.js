@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { cdn_url } from "config/constants";
 import "./header.scss";
 
+const listMenu = ["수강권보기", "튜터소개", "토픽소개", "수강후기", "B2B프로그램"];
+
 class Header extends Component {
   goHome = () => {
     window.location.href = "/home";
@@ -49,12 +51,14 @@ class Header extends Component {
           </h1>
           <p className="logo_sub">24시간 1:1 영어회화앱</p>
           <nav className="gnb" onMouseOver={this.handleHover}>
-            <ul onMouseOver={this.menuHandler}>
-              <li>수강권보기</li>
-              <li>튜터소개</li>
-              <li>토픽소개</li>
-              <li>수강후기</li>
-              <li>B2B프로그램</li>
+            <ul>
+              {listMenu.map((el, idx) => {
+                return (
+                  <li key={idx} onMouseOver={this.menuHandler}>
+                    {el}
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </div>
