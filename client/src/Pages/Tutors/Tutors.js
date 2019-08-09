@@ -19,6 +19,7 @@ class Tutors extends Component {
     end: 20
   };
 
+  // WillMount 는 곧 없어질 예정으로 사용 금지.
   // componentWillMount = () => {
   //   this.getTutorNum();
   // };

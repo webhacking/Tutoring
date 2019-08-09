@@ -26,7 +26,7 @@ app.listen(port, () => {
     }
 
     database = client.db(DATABASE_NAME);
-    collection = database.collection("tutors");
+    collection = database.collection("tutors"); // Test 할 때는 collection 이름을 test로 변경 !
     console.log("Connected to " + DATABASE_NAME + "!");
   });
 });
@@ -47,7 +47,59 @@ app.delete("/crawling/delete", (req, res) => {
   res.send("deleted all collection");
 });
 
-app.post("/crawling/create", (req, res) => {
+app.post("/crawling/createTest", (req, res) => {
+  request(`https://tutoring.co.kr/home/tutors?page=1`, (err, response, html) => {
+    if (!err && response.statusCode == 200) {
+      const $ = cheerio.load(html);
+      const tutorList = $("ul.tutor_lst").children("li.item");
+
+      tutorList.each((i, el) => {
+        const item = {
+          tutor_id: tutor_idx,
+          img_url: $(el)
+            .children("a")
+            .children("div.t_box")
+            .children("p.thum")
+            .children("img")
+            .attr("src"),
+          name: $(el)
+            .children("a")
+            .children("div.t_box")
+            .children("p.name")
+            .text(),
+          desc: $(el)
+            .children("a")
+            .children("div.t_box")
+            .children("p.txt")
+            .text(),
+          lessons: $(el)
+            .children("a")
+            .children("div.b_box")
+            .children("p.lessons")
+            .children("span")
+            .text(),
+          type: $(el)
+            .children("a")
+            .children("div.b_box")
+            .children("p.type")
+            .text()
+        };
+
+        tutor_idx++;
+
+        collection.insertOne(item, (err, result) => {
+          if (err) {
+            throw err;
+          }
+        });
+      });
+
+      res.status(200).send("data inserted succssfully");
+    }
+  });
+});
+
+app.post("/tutors/create", (req, res) => {
   const page = req.body.page;
 
   request(`https://tutoring.co.kr/home/tutors?page=${page}`, (err, response, html) => {

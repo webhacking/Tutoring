@@ -6,10 +6,6 @@ import "./header.scss";
 const listMenu = ["수강권보기", "튜터소개", "토픽소개", "수강후기", "B2B프로그램"];
 
 class Header extends Component {
-  goHome = () => {
-    window.location.href = "/home";
-  };
-
   state = {
     isHover: false,
     selectedMenu: ""
@@ -45,9 +41,9 @@ class Header extends Component {
       <header className={`header_wrap ${fix === true || isHover === true ? "fixed" : ""}`}>
         <div className="header_inner">
           <h1 className="main_logo">
-            <span className="logo_span" onClick={this.goHome}>
-              튜터링
-            </span>
+            <Link to="/home">
+              <span className="logo_span">튜터링</span>
+            </Link>
           </h1>
           <p className="logo_sub">24시간 1:1 영어회화앱</p>
           <nav className="gnb" onMouseOver={this.handleHover}>
