@@ -25,7 +25,7 @@ class Tutors extends Component {
   // };
 
   componentDidMount = () => {
-    document.title = "튜터";
+    document.title = "튜터"; // Helmet을 사용하도록 !!
     this.getTutorNum();
     this.getTutors();
   };
@@ -53,10 +53,6 @@ class Tutors extends Component {
     this.setState({
       isLoaded: false,
       tutor_list: body
-      // },
-      // () => {
-      //   this.scrollHandler();
-      // }
     });
   };
 
@@ -76,17 +72,6 @@ class Tutors extends Component {
     });
   };
 
-  // scrollHandler = () => {
-  //   const currScrollY = window.scrollY;
-
-  //   if (currScrollY >= 2134) {
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth"
-  //     });
-  //   }
-  // };
-
   onChangeHandler = e => {
     this.setState({
       name: e.target.value
@@ -105,34 +90,9 @@ class Tutors extends Component {
     this.setState({ type: clickedType });
   };
 
-  // pageHandler = () => {
-  //   let nowPage = this.state.nowPage;
-
-  //   if (num === "+") {
-  //     nowPage++;
-
-  //     // if (pageNum >= slideList.length - 1) {
-  //     //   curr_idx = slideList.length - 1;
-  //     // }
-
-  //     this.setState({
-  //       nowPage
-  //     });
-  //   } else if (num === "-") {
-  //     nowPage--;
-
-  //     if (nowPage < 1) {
-  //       nowPage = 1;
-  //     }
-
-  //     this.setState({
-  //       nowPage
-  //     });
-  //   }
-  // };
-
-  render() {
-    const { type, name, tutor_list, tutor_total, isLoaded } = this.state;
+  //callback으로 설정해서 render에서 부르지 않고 바로 렌더링할 수 있도록??
+  listFilter = () => {
+    const { type, name, tutor_list } = this.state;
     let filteredList = [];
 
     if (tutor_list) {
@@ -145,7 +105,11 @@ class Tutors extends Component {
       });
     }
 
-    let resultComponent = filteredList.length > 0 ? <TutorList list={filteredList} /> : <EmptyResult />;
+    return filteredList.length > 0 ? <TutorList list={filteredList} /> : <EmptyResult />;
+  };
+
+  render() {
+    const { type, name, tutor_total, isLoaded } = this.state;
 
     return (
       <>
@@ -161,13 +125,11 @@ class Tutors extends Component {
               pageHandler={this.pageHandler}
             />
 
-            <div className="tutor_list">{isLoaded ? <Spinner /> : resultComponent}</div>
+            <div className="tutor_list">{isLoaded ? <Spinner /> : this.listFilter()}</div>
             <div className="pagination">
-              {filteredList.length > 0 && (
-                <div onClick={this.handleShowMore} className="showmore">
-                  <p>더 보기</p>
-                </div>
-              )}
+              <div onClick={this.handleShowMore} className="showmore">
+                <p>더 보기</p>
+              </div>
             </div>
           </div>
         </div>

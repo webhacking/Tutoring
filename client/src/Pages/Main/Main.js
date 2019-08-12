@@ -10,13 +10,18 @@ class Main extends Component {
     fixed: false
   };
 
-  componentDidMount = () => {
+  componentDidMount() {
     window.addEventListener("scroll", this.checkNavbar);
-  };
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.checkNavbar);
+  }
 
   checkNavbar = () => {
     let pageY = window.pageYOffset;
     const isFixed = this.state.fixed;
+    console.log("스크롤 이벤트");
 
     if (!isFixed && pageY >= 46) {
       this.setState({
@@ -31,6 +36,7 @@ class Main extends Component {
 
   render() {
     const { fixed } = this.state;
+    console.log("scrolling render");
 
     return (
       <>
