@@ -19,11 +19,6 @@ class Tutors extends Component {
     end: 20
   };
 
-  // WillMount 는 곧 없어질 예정으로 사용 금지.
-  // componentWillMount = () => {
-  //   this.getTutorNum();
-  // };
-
   componentDidMount = () => {
     document.title = "튜터"; // Helmet을 사용하도록 !!
     this.getTutorNum();
@@ -41,7 +36,6 @@ class Tutors extends Component {
 
   getTutors = async () => {
     const { start, end, isLoaded } = this.state;
-    // console.log(nowPage);
 
     if (!isLoaded) {
       this.setState({ isLoaded: true });
@@ -64,8 +58,6 @@ class Tutors extends Component {
 
     const res = await fetch(`/tutors?start=${start}&end=${end}`);
     const data = await res.json();
-
-    // console.log(data);
 
     this.setState({
       tutor_list: [...tutor_list, ...data]
@@ -90,7 +82,6 @@ class Tutors extends Component {
     this.setState({ type: clickedType });
   };
 
-  //callback으로 설정해서 render에서 부르지 않고 바로 렌더링할 수 있도록??
   listFilter = () => {
     const { type, name, tutor_list } = this.state;
     let filteredList = [];

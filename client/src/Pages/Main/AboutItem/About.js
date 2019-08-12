@@ -1,11 +1,11 @@
 import React from "react";
-import AboutWhy from "Pages/Main/AboutItem/About_why";
-import AboutTuto from "Pages/Main/AboutItem/About_tuto";
-import AboutMatch from "Pages/Main/AboutItem/About_match";
-import AboutPrice from "Pages/Main/AboutItem/About_price";
-import AboutYoutube from "Pages/Main/AboutItem/About_youtube";
-import AboutReview from "Pages/Main/AboutItem/About_review";
-import AboutLab from "Pages/Main/AboutItem/About_lab";
+import AboutWhy from "./About_why";
+import AboutTuto from "./About_tuto";
+import AboutMatch from "./About_match";
+import AboutPrice from "./About_price";
+import AboutYoutube from "./About_youtube";
+import AboutReview from "./About_review";
+import AboutLab from "./About_lab";
 
 const About = () => (
   <>
